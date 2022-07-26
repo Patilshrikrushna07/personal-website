@@ -34,3 +34,26 @@
     $('.social-links a').tooltip();
 
 })(jQuery);
+
+function SendMessage(){
+
+
+
+  var name=document.getElementById("name").value;
+  var email=document.getElementById("email").value;
+  var message=document.getElementById("message").value;
+
+  if(name==""||email==""||message==""){
+      alert("Please enter data in all fields.")
+  }
+  else{
+
+    var link = "mailto:patilshrikrushna77@gmail.com" 
+    + "?cc=" +encodeURIComponent(document.getElementById('email').value)
+    + "&subject=My Name is " + encodeURIComponent(document.getElementById('name').value)
+    + "&body=" + encodeURIComponent(document.getElementById('message').value)
+    window.location.href=link;
+      // alert("Message has been sent. We will notify you to your E-mail.");
+
+  }
+}
